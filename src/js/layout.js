@@ -2,13 +2,15 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
+import { Characters } from "./views/characters";
 import { Planets } from "./views/planets";
-import { SingleCard } from "./component/singleCard";
+import { SinglePerson } from "./component/singlePerson";
+import { SinglePlanet } from "./component/singlePlanet";
+
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
-import { Characters } from "./views/characters";
 
 //create your first component
 const Layout = () => {
@@ -29,7 +31,10 @@ const Layout = () => {
 							<Planets />
 						</Route>
 						<Route exact path="/characters/:theid">
-							<SingleCard />
+							<SinglePerson />
+						</Route>
+						<Route exact path="/planets/:theid">
+							<SinglePlanet />
 						</Route>
 					</Switch>
 					<Footer />

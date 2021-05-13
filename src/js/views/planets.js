@@ -1,9 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
-import { Cards } from "../component/cards.js";
+import { PlanetCard } from "../component/planetCard.js";
+import { useParams } from "react-router-dom";
 
 export const Planets = () => {
 	const { store, actions } = useContext(Context);
+	const { theid } = useParams();
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 
 	return (
 		<div className="container mt-5">
@@ -11,9 +17,10 @@ export const Planets = () => {
 			<div className="row justify-content-around">
 				{store.planets.map((element, i) => {
 					return (
-						<Cards
+						<PlanetCard
 							key={i}
-							imgURL={"https://upload.wikimedia.org/wikipedia/en/d/d4/PlanetEndor.jpg"}
+							position={i}
+							imgURL={store.planetImg[i].imgURL}
 							name={element.name}
 							img={element.img}
 						/>

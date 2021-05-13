@@ -2,25 +2,24 @@ import React, { useState, useContext } from "react";
 import PropTypes from "prop-types";
 import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
-import { SingleCard } from "../component/singleCard";
+import { SinglePerson } from "../component/singlePerson";
 
-export function Single(props) {
+export function SinglePersonView(props) {
 	const { store, actions } = useContext(Context);
 	const { theid } = useParams();
 	return (
-		<div className="">
+		<div>
 			{store.singleCharacter.map((element, i) => {
 				return (
-					<SingleCard
+					<SinglePerson
 						key={i}
-						imgURL={""}
+						position={i}
 						name={element.name}
 						gender={element.gender}
 						birth_year={element.birth_year}
 						height={element.height}
 						mass={element.mass}
 						homeworld={element.homeworld}
-						theid={theid}
 					/>
 				);
 			})}
@@ -28,6 +27,6 @@ export function Single(props) {
 	);
 }
 
-Single.propTypes = {
+SinglePersonView.propTypes = {
 	match: PropTypes.object
 };

@@ -5,12 +5,37 @@
     box-sizing: border-box;
     font-family: 'Pacifico', cursive;
 }
+.navbar {
+    background-color: black;
+    box-shadow: 0px 25px 35px 5px rgba(255,255,255,0.75);
+}
 body {
 background-image: url('https://images.pexels.com/photos/2387877/pexels-photo-2387877.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
+}
+a {
+    color: white;
+}
+ul, li {
+    font-size: 16px;
+}
+.fa-times-circle {
+    font-size: 30px;
+}
+.fa-times-circle:hover {
+    color: white;
 }
 .btn, .card-body, .card-footer {
     background-color: black;
 }
-.luz {
+.luz1 {
     box-shadow: 0px 0px 30px 10px rgba(255,255,255,0.80);
+}
+.luz2 {
+    box-shadow: 0px 0px 30px 10px rgba(41, 241, 241, 0.8);
+}
+.drop-menu-right {
+    background-color: black;
+}
+.badge {
+    font-size: 25px;
 }
