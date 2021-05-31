@@ -1,27 +1,30 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+// import Swal from "sweetalert2";
 
 export const Navbar = () => {
-    const { store, actions } = useContext(Context);
-    
-    const { value: formValues } = await Swal.fire({
-  title: 'Multiple inputs',
-  html:
-    '<input id="swal-input1" class="swal2-input">' +
-    '<input id="swal-input2" class="swal2-input">',
-  focusConfirm: false,
-  preConfirm: () => {
-    return [
-      document.getElementById('swal-input1').value,
-      document.getElementById('swal-input2').value
-    ]
-  }
-})
+	const { store, actions } = useContext(Context);
 
-if (formValues) {
-  Swal.fire(JSON.stringify(formValues))
-}
+	// const handlerClick = () => {
+	// 	const { value: formValues } = Swal.fire({
+	// 		title: "Login",
+	// 		confirmButtonText: "Sign in",
+	// 		confirmButtonColor: "#000000",
+	// 		html:
+	// 			'<input placeholder="Email" id="swal-input1" class="swal2-input">' +
+	// 			'<input type="password" placeholder="Password" id="swal-input2" class="swal2-input">',
+	// 		inputPlaceholder: "Email",
+	// 		focusConfirm: false,
+	// 		preConfirm: () => {
+	// 			return [document.getElementById("swal-input1").value, document.getElementById("swal-input2").value];
+	// 		}
+	// 	});
+
+	// 	if (formValues) {
+	// 		Swal.fire(JSON.stringify(formValues));
+	// 	}
+	// };
 
 	return (
 		<nav className="navbar sticky-top navbar-expand-lg navbar-dark">
@@ -35,12 +38,17 @@ if (formValues) {
 					<h1>Planets</h1>
 				</Link>
 			</div>
-			<button className="btn" data-toggle="modal" data-target="#exampleModal">
-				Login
-			</button>
-			{/* modal */}
-			<div className="col-3">
-				<div className="ml-auto">
+			<div>
+				<Link
+					to={"/login"}
+					className="btn btn-outline-light bg-transparent text-white"
+					//  onClick={handlerClick}
+				>
+					<h3>Login</h3>
+				</Link>
+			</div>
+			<div className="">
+				<div className="mx-1">
 					<div className="nav-item dropdown">
 						<a
 							className="nav-link bg-transparent btn btn-outline-light"

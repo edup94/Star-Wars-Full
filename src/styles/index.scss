@@ -24,7 +24,7 @@ ul, li {
 .fa-times-circle:hover {
     color: white;
 }
-.btn, .card-body, .card-footer {
+.btn, .card-body, .card-footer, .btn.hover, .btn:hover, .drop-menu-right{
     background-color: black;
 }
 .luz1 {
@@ -33,9 +33,10 @@ ul, li {
 .luz2 {
     box-shadow: 0px 0px 30px 10px rgba(41, 241, 241, 0.8);
 }
-.drop-menu-right {
-    background-color: black;
-}
 .badge {
     font-size: 25px;
+}
+.login {
+    margin-top: 15%;
+    margin-bottom: 12%
 }
